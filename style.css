@@ -15,9 +15,6 @@ body {
   line-height: 1.6;
 }
 
-
-
-
 /* ================= HEADER / NAVBAR ================= */
 
 .header {
@@ -30,26 +27,25 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between; /* Pushes Logo left, Nav right */
   align-items: center;
-  padding: 10px 5%;
+  justify-content: space-between;
+  padding: 12px 5%;
   max-width: 1200px;
   margin: auto;
 }
 
+/* Logo section */
 .logo {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 14px;
 }
 
 .logo img {
-  height: 100px; /* Increased from 70px for better visibility on desktop */
+  height: 70px;               /* 🔥 FIX: Proper visible size */
   width: auto;
   display: block;
-  /* Optional: Add a subtle border for extra emphasis */
-  border: 2px solid #2c7be5; /* Matches your theme color */
-  border-radius: 8px; /* Softens the edges */
+  border-radius: 8px;
 }
 
 .logo-text {
@@ -60,7 +56,7 @@ body {
 .clinic-name {
   font-weight: bold;
   color: #2c7be5;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1.2;
 }
 
@@ -69,11 +65,13 @@ body {
   color: #666;
 }
 
+/* Nav links aligned to RIGHT */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 2rem;
   align-items: center;
+  margin-left: auto;          /* 🔥 FIX: forces right alignment */
 }
 
 .nav-links a {
@@ -83,7 +81,9 @@ body {
   transition: 0.3s;
 }
 
-.nav-links a:hover { color: #2c7be5; }
+.nav-links a:hover {
+  color: #2c7be5;
+}
 
 .btn-nav {
   background: #2c7be5;
@@ -92,13 +92,17 @@ body {
   border-radius: 20px;
 }
 
+/* Hamburger */
 .menu-toggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   background: none;
   border: none;
   cursor: pointer;
-}/* ================= MOBILE NAV ================= */
+  color: #2c7be5;
+}
+
+/* ================= MOBILE NAV ================= */
 
 @media (max-width: 768px) {
 
@@ -106,18 +110,17 @@ body {
     display: block;
   }
 
-  /* CLOSED BY DEFAULT */
   .nav-links {
     position: absolute;
-    top: 72px; /* 🔥 Below navbar */
+    top: 78px;
     left: 0;
     width: 100%;
     background: #ffffff;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 0;
-    display: none; /* ✅ IMPORTANT */
+    padding: 1.2rem 0;
+    display: none;             /* ✅ closed by default */
     box-shadow: 0 6px 12px rgba(0,0,0,0.08);
   }
 
@@ -130,16 +133,16 @@ body {
     padding: 8px 0;
   }
 
-  .logo {
-    font-size: 1rem;
+  .logo img {
+    height: 55px;              /* 🔥 FIX: bigger mobile logo */
   }
 
-  .logo img {
-    height: 36px;
+  .clinic-name {
+    font-size: 1.05rem;
   }
 }
 
-/* ================= REST OF SITE (UNCHANGED) ================= */
+/* ================= REST OF SITE ================= */
 
 .whatsapp .btn {
   margin-top: 1.5rem;
@@ -290,18 +293,4 @@ textarea {
   .hero h1 {
     font-size: 2.4rem;
   }
-  /* Mobile-specific override */
-@media (max-width: 768px) {
-  .logo img {
-    height: 60px; /* Increased from 36px for better mobile visibility */
-    /* Keep the border if desired, or remove for a cleaner mobile look */
-  }
 }
-}
-
-
-
-
-
-
-
