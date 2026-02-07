@@ -1,3 +1,4 @@
+// Existing appointment form validation
 document.getElementById("appointmentForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -21,4 +22,20 @@ document.getElementById("appointmentForm").addEventListener("submit", function (
   status.textContent = "Thank you. Your query has been submitted successfully.";
   status.style.color = "green";
   this.reset();
+});
+
+
+// ✅ NEW: Service → WhatsApp mapping
+const whatsappNumber = "+917017784451"; // replace with clinic number
+
+document.querySelectorAll(".service-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const issue = item.getAttribute("data-issue");
+
+    const message = `Hello Doctor, I would like to consult regarding ${issue}. Please let me know the available appointment timings.`;
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+  });
 });
