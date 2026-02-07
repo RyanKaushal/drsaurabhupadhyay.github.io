@@ -29,6 +29,20 @@ body {
   align-items: center;
 }
 
+/* Logo */
+.logo {
+  font-weight: bold;
+  color: #2c7be5;
+}
+
+/* Desktop navigation */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Hamburger button */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -37,6 +51,8 @@ body {
   cursor: pointer;
   color: #2c7be5;
 }
+
+/* Mobile navigation */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -52,7 +68,7 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem 0;
-    display: none;
+    display: none; /* CLOSED BY DEFAULT */
     box-shadow: 0 6px 12px rgba(0,0,0,0.08);
   }
 
@@ -66,22 +82,9 @@ body {
   }
 }
 
-
 .whatsapp .btn {
-  margin-top: 1.5rem; /* increase or decrease as needed */
+  margin-top: 1.5rem;
   display: inline-block;
-}
-
-
-.logo {
-  font-weight: bold;
-  color: #2c7be5;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
 }
 
 .nav-links a {
@@ -235,5 +238,3 @@ textarea {
     font-size: 2.4rem;
   }
 }
-
-
