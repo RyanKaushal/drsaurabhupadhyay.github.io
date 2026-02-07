@@ -42,7 +42,7 @@ body {
 }
 
 .logo img {
-  height: 70px;               /* 🔥 FIX: Proper visible size */
+  height: 120px;               /* 🔥 FIX: Proper visible size */
   width: auto;
   display: block;
   border-radius: 8px;
@@ -294,3 +294,4 @@ textarea {
     font-size: 2.4rem;
   }
 }
+
