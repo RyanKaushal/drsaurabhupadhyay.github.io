@@ -177,6 +177,10 @@ textarea {
   margin-top: 1rem;
 }
 
+.service-item {
+  cursor: pointer;
+}
+
 .footer {
   background: #ffffff;
   text-align: center;
@@ -190,3 +194,4 @@ textarea {
     font-size: 2.4rem;
   }
 }
+
