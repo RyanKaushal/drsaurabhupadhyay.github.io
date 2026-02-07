@@ -32,6 +32,12 @@ body {
   margin: auto;
 }
 
+.whatsapp .btn {
+  margin-top: 1.5rem; /* increase or decrease as needed */
+  display: inline-block;
+}
+
+
 .logo {
   font-weight: bold;
   color: #2c7be5;
