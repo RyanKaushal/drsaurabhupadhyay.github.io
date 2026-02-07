@@ -24,6 +24,14 @@ document.getElementById("appointmentForm").addEventListener("submit", function (
   this.reset();
 });
 
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+
 
 // ✅ NEW: Service → WhatsApp mapping
 const whatsappNumber = "+917017784451"; // replace with clinic number
@@ -39,3 +47,4 @@ document.querySelectorAll(".service-item").forEach(item => {
     window.open(whatsappURL, "_blank");
   });
 });
+
