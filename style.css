@@ -27,10 +27,45 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  max-width: 1200px;
-  margin: auto;
 }
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2c7be5;
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    display: none;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .logo {
+    max-width: 75%;
+    font-size: 1rem;
+  }
+}
+
 
 .whatsapp .btn {
   margin-top: 1.5rem; /* increase or decrease as needed */
@@ -200,4 +235,5 @@ textarea {
     font-size: 2.4rem;
   }
 }
+
 
