@@ -73,6 +73,7 @@ body {
   gap: 2rem;
   align-items: center;
   margin-left: auto;          /* 🔥 FIX: forces right alignment */
+  justify-content: flex-end;  /* 🔥 NEW: Right-aligns the nav link contents (Home, About, etc.) within the nav-links container */
 }
 
 .nav-links a {
@@ -109,6 +110,10 @@ body {
 
   .menu-toggle {
     display: block;
+    position: absolute;        /* 🔥 NEW: Positions hamburger on the right side */
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .nav-links {
@@ -417,4 +422,3 @@ textarea {
     font-size: 1.5rem;
   }
 }
-
