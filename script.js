@@ -58,18 +58,38 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ===============================
      Services → WhatsApp Redirect
      =============================== */
-  const whatsappNumber = "917017784451"; // no + for wa.me
+  // const whatsappNumber = "917017784451"; // no + for wa.me
 
-  document.querySelectorAll(".service-item").forEach(item => {
-    item.addEventListener("click", () => {
-      const issue = item.getAttribute("data-issue");
+  // document.querySelectorAll(".service-item").forEach(item => {
+  //   item.addEventListener("click", () => {
+  //     const issue = item.getAttribute("data-issue");
 
-      const message = `Hello Doctor, I would like to consult regarding ${issue}. Please let me know the available appointment timings.`;
+  //     const message = `Hello Doctor, I would like to consult regarding ${issue}. Please let me know the available appointment timings.`;
 
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  //     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-      window.open(whatsappURL, "_blank");
+  //     window.open(whatsappURL, "_blank");
+  //   });
+  // });
+
+  /* ===============================
+   Services → Expand Article (Accordion Style)
+   =============================== */
+document.querySelectorAll(".service-item").forEach(item => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent any default behavior
+
+    // Close all other expanded items (accordion: only one open at a time)
+    document.querySelectorAll(".service-item.expanded").forEach(expandedItem => {
+      if (expandedItem !== item) {
+        expandedItem.classList.remove("expanded");
+      }
     });
+
+    // Toggle the clicked item
+    item.classList.toggle("expanded");
   });
+});
 
 });
+
