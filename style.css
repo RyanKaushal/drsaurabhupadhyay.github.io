@@ -844,29 +844,37 @@ textarea {
 
   }
 
-  .clinic-images {
+.clinic-images {
   display: flex;
-  gap: 15px;
   justify-content: center;
+  align-items: center;
+  gap: 12px;
   margin: 20px 0;
+  flex-wrap: nowrap; /* FORCE single horizontal line */
 }
 
 .clinic-images img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 8px;
+  width: 160px;      /* SMALL size */
+  height: 110px;     /* SAME height for all */
   object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* Mobile view */
 @media (max-width: 768px) {
   .clinic-images {
     flex-direction: column;
-    align-items: center;
+  }
+
+  .clinic-images img {
+    width: 90%;
+    height: 180px;
   }
 }
 
 
+
 }
+
 
