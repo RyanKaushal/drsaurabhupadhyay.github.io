@@ -57,7 +57,7 @@ body {
 
 /* LOGO */
 .logo img {
-  height: 60px;      /* 🔥 CHANGE THIS to resize logo */
+  height: 120px;      /* 🔥 CHANGE THIS to resize logo */
   width: auto;
   object-fit: contain;
 }
@@ -937,6 +937,7 @@ textarea {
     max-width: 90%;
   }
 }
+
 
 
 
