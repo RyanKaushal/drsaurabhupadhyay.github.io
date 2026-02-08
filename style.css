@@ -16,7 +16,7 @@ html {
 
   scroll-behavior: smooth;
 
-  scroll-padding-top: 150px;  /* 🔥 NEW: Adds 120px padding to prevent header overlap on anchor scrolls */
+  scroll-padding-top: 120px;  /* 🔥 NEW: Adds 120px padding to prevent header overlap on anchor scrolls */
 
 }
 
@@ -57,7 +57,7 @@ body {
 
 /* LOGO */
 .logo img {
-  height: 120px;      /* 🔥 CHANGE THIS to resize logo */
+  height: 200px;      /* 🔥 CHANGE THIS to resize logo */
   width: auto;
   object-fit: contain;
 }
@@ -937,6 +937,7 @@ textarea {
     max-width: 90%;
   }
 }
+
 
 
 
