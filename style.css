@@ -903,6 +903,51 @@ textarea {
   background: #2c7be5;
   color: #ffffff;
 }
+.schedule-btn {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  margin: 20px auto;
+  padding: 16px 20px;
+
+  background-color: #0a67b3;
+  color: #ffffff;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(10, 103, 179, 0.25);
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.schedule-btn:hover {
+  background-color: #084f8a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(10, 103, 179, 0.35);
+}
+
+/* Active (click) */
+.schedule-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(10, 103, 179, 0.25);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .schedule-btn {
+    font-size: 1rem;
+    padding: 14px 18px;
+    max-width: 90%;
+  }
+}
+
 
 
 
