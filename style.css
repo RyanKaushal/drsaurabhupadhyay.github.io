@@ -88,7 +88,7 @@ body {
 
 .logo img {
 
-  height: 70px;               /* 🔥 FIX: Proper visible size */
+  height: 100px;               /* 🔥 FIX: Proper visible size */
 
   width: auto;
 
@@ -947,6 +947,7 @@ textarea {
     max-width: 90%;
   }
 }
+
 
 
 
