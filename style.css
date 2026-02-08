@@ -844,59 +844,44 @@ textarea {
 
   }
 
+
+}
+/* ================= CLINIC IMAGES ================= */
+
 .clinic-images {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 14px;
   margin: 20px auto;
-  max-width: 900px;     /* ⬅️ LIMIT WIDTH */
-  overflow: hidden;
+  max-width: 900px;
 }
 
-/* ===== FORCE FIX FOR CLINIC IMAGES ===== */
-.clinic-images-fix {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 12px !important;
-  max-width: 900px !important;
-  margin: 20px auto !important;
-}
-
-.clinic-images-fix img {
-  width: 160px !important;
-  height: 110px !important;
-  max-width: 160px !important;
-  max-height: 110px !important;
-  object-fit: cover !important;
-  display: block !important;
-  flex: 0 0 auto !important;
+.clinic-images img {
+  width: 160px;
+  height: 110px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease;
 }
 
-/* MOBILE */
+.clinic-images img:hover {
+  transform: scale(1.05);
+}
+
+/* MOBILE VIEW */
 @media (max-width: 768px) {
-  .clinic-images-fix {
-    flex-direction: column !important;
+  .clinic-images {
+    flex-direction: column;
   }
 
-  .clinic-images-fix img {
-    width: 90% !important;
-    height: 180px !important;
-    max-width: 90% !important;
+  .clinic-images img {
+    width: 90%;
+    height: 180px;
   }
 }
-.clinic-images-fix img:hover {
-  transform: scale(1.04);
-  transition: 0.25s ease;
-}
 
-
-
-
-}
 
 
 
