@@ -840,6 +840,8 @@ textarea {
   line-height: 1.7;
   color: #444;
   margin-bottom: 10px;
+  display: flow;
+
 }
 
 .modal-content ul {
