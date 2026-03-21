@@ -40,6 +40,10 @@ body {
 
 /* ================= HEADER & NAVBAR ================= */
 
+.about {
+  padding: 60px 20px;
+  background: #f9fbfd;
+}
 .header {
   background: #ffffff;
   position: sticky;
@@ -683,15 +687,61 @@ textarea {
   align-items: center;
 
 }
+.about-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.about-card ul {
+  padding-left: 18px;
+}
+
+.about-card li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.about-card strong {
+  color: #000;
+}
+.about-card:hover {
+  transform: translateY(-3px);
+}
+.about-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #0a58ca;
+}
+.about-card {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
 
 
-
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #222;
+}
 .modal.active {
 
   display: flex; /* Show when active */
 
 }
 
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
 
 /* Modal Content Container */
