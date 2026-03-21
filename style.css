@@ -39,7 +39,26 @@ body {
 
 
 /* ================= HEADER & NAVBAR ================= */
+.about-readmore {
+  text-align: center;
+  margin-top: 25px;
+}
 
+.read-more-btn {
+  padding: 12px 24px;
+  background: #0A58CA;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.read-more-btn:hover {
+  background: #084298;
+}
+
+/* new */
 .about {
   padding: 70px 20px;
   background: #EAF2FF;
