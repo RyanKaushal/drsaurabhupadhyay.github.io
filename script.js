@@ -2,16 +2,17 @@ document.addEventListener("DOMContentLoaded", function () {
     /* ===============================
      About Modal (Read More)
   =============================== */
-  function openModal() {
-    document.getElementById("aboutModal").style.display = "block";
-    document.body.style.overflow = "hidden";
-  }
+function openModal() {
+  const modal = document.getElementById("aboutModal");
+  modal.style.display = "flex"; // IMPORTANT (not block)
+  document.body.style.overflow = "hidden";
+}
 
-  function closeModal() {
-    document.getElementById("aboutModal").style.display = "none";
-    document.body.style.overflow = "auto";
-  }
-
+function closeModal() {
+  const modal = document.getElementById("aboutModal");
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+}
   // Make functions global (for onclick in HTML)
   window.openModal = openModal;
   window.closeModal = closeModal;
