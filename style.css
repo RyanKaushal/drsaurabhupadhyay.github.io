@@ -696,7 +696,7 @@ textarea {
 
 /* Modal Overlay */
 
-.modal {
+/* .modal {
 
   position: fixed;
 
@@ -710,15 +710,29 @@ textarea {
 
   background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
 
-  display: none; /* Hidden by default */
+  /* display: none; /* Hidden by default */
 
-  z-index: 2000; /* Above everything else */
+  /* z-index: 2000; /* Above everything else */ */
 
-  justify-content: center;
+  /* justify-content: center; */
 
+  /* align-items: center; */ */
+
+/* } */ */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px); /* premium glass effect */
+  display: flex;
   align-items: center;
-
+  justify-content: center;
+  padding: 20px;
 }
+
 .about-card p {
   font-size: 15px;
   line-height: 1.7;
