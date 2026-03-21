@@ -41,14 +41,27 @@ body {
 /* ================= HEADER & NAVBAR ================= */
 
 .about {
-  padding: 60px 20px;
-  background: #f9fbfd;
+  padding: 70px 20px;
+  background: #EAF2FF;
 }
+
 .header {
   background: #ffffff;
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.section-subtitle {
+  text-align: center;
+  margin: 10px 0 40px;
+  color: #555;
 }
 
 .navbar {
@@ -703,35 +716,47 @@ textarea {
   font-size: 15px;
   line-height: 1.6;
 }
+.btn-primary {
+  background: #20C997;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 
 .about-card strong {
   color: #000;
 }
 .about-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 .about-card h3 {
-  font-size: 20px;
+  color: #0A58CA;
   margin-bottom: 15px;
-  color: #0a58ca;
 }
 .about-card {
-  background: #ffffff;
-  padding: 25px 30px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
 }
+.about-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
 
 
 .section-title {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 40px;
-  color: #222;
+  color: #0A58CA;
 }
+
 .modal.active {
 
   display: flex; /* Show when active */
@@ -739,8 +764,8 @@ textarea {
 }
 
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1100px;
+  margin: auto;
 }
 
 
