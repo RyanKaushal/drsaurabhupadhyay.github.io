@@ -62,53 +62,111 @@
     <section id="about" class="about">
   <div class="container">
 
-    <h2 class="section-title">About The Doctor</h2>
-    <p class="section-subtitle">
-      Trusted psychiatric care focused on <strong>empathy, accuracy, and long-term well-being</strong>
-    </p>
+  <h2 class="section-title">About The Doctor</h2>
+  <p class="section-subtitle">
+    Trusted psychiatric care focused on <strong>empathy, accuracy, and long-term well-being</strong>
+  </p>
 
-    <div class="about-grid">
+  <div class="about-grid">
 
-      <!-- Card 1 -->
-      <div class="about-card">
-        <h3>🎓 Education & Credentials</h3>
-        <p>
-          <strong>Dr. Saurabh Upadhyay</strong> completed his 
-          <strong>MD in Psychiatry</strong> from 
-          <strong>IMHH, Agra</strong> — a <strong>WHO-recognized Centre of Excellence</strong>.
-        </p>
-        <p>
-          He holds an <strong>MBBS</strong> from 
-          <strong>LLRM Medical College, Meerut</strong>, known for 
-          <strong>high clinical exposure</strong>.
-        </p>
-      </div>
+    <!-- Card 1 -->
+    <div class="about-card">
+      <h3>🎓 Education &amp; Credentials</h3>
+      <p>
+        <strong>Dr. Saurabh Upadhyay</strong> completed his 
+        <strong>MD in Psychiatry</strong> from 
+        <strong>IMHH, Agra</strong> — a <strong>WHO-recognized Centre of Excellence</strong>.
+      </p>
+      <p>
+        He holds an <strong>MBBS</strong> from 
+        <strong>LLRM Medical College, Meerut</strong>, known for 
+        <strong>high clinical exposure</strong>.
+      </p>
 
-      <!-- Card 2 -->
-      <div class="about-card">
-        <h3>🧠 Clinical Expertise</h3>
-        <ul>
-          <li><strong>Depression, Anxiety, Panic Attacks</strong></li>
-          <li><strong>Schizophrenia & Bipolar Disorder</strong></li>
-          <li><strong>Sexual Health (ED, Dhat, PE)</strong></li>
-          <li><strong>De-addiction (Alcohol, Tobacco)</strong></li>
-          <li><strong>ADHD, Autism, Child Psychiatry</strong></li>
-        </ul>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="about-card">
-        <h3>💙 Treatment Philosophy</h3>
-        <ul>
-          <li><strong>Accurate Diagnosis First</strong></li>
-          <li><strong>Minimal & Necessary Medication</strong></li>
-          <li><strong>Empathetic Listening</strong></li>
-          <li><strong>Confidential & Safe Environment</strong></li>
-        </ul>
-      </div>
-
+      <!-- Read More Button -->
+      <button class="read-more-btn" onclick="openModal()">Read More</button>
     </div>
 
+    <!-- Card 2 -->
+    <div class="about-card">
+      <h3>🧠 Clinical Expertise</h3>
+      <ul>
+        <li><strong>Depression, Anxiety, Panic Attacks</strong></li>
+        <li><strong>Schizophrenia &amp; Bipolar Disorder</strong></li>
+        <li><strong>Sexual Health (ED, Dhat, PE)</strong></li>
+        <li><strong>De-addiction (Alcohol, Tobacco)</strong></li>
+        <li><strong>ADHD, Autism, Child Psychiatry</strong></li>
+      </ul>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="about-card">
+      <h3>💙 Treatment Philosophy</h3>
+      <ul>
+        <li><strong>Accurate Diagnosis First</strong></li>
+        <li><strong>Minimal &amp; Necessary Medication</strong></li>
+        <li><strong>Empathetic Listening</strong></li>
+        <li><strong>Confidential &amp; Safe Environment</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="about-cta">
+    <a href="#contact" class="btn-primary">Book Appointment</a>
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+    <h3><strong>Professional Pedigree & Educational Foundation</strong></h3>
+
+    <p>
+      <strong>Dr. Saurabh Upadhyay’s</strong> standing as a leading psychiatrist in Lucknow is anchored in his training at 
+      <strong>two of India’s most esteemed medical institutions</strong>.
+    </p>
+
+    <p>
+      <strong>MD in Psychiatry (IMHH, Agra):</strong> He completed his specialization at the 
+      <strong>Institute of Mental Health and Hospital (IMHH), Agra</strong>. Established in <strong>1859</strong>, 
+      IMHH is one of the <strong>oldest psychiatric facilities in South Asia</strong> and was recognized by the 
+      <strong>WHO as a "Centre of Excellence" for schizophrenia research</strong>. This background provided him with 
+      <strong>deep exposure to complex, chronic psychiatric cases</strong> and <strong>advanced rehabilitative practices</strong>.
+    </p>
+
+    <p>
+      <strong>MBBS (LLRM Medical College, Meerut):</strong> His foundational medical degree is from 
+      <strong>Lala Lajpat Rai Memorial (LLRM) Medical College</strong>, a <strong>premier government college in Uttar Pradesh</strong>, 
+      ranked among the <strong>top medical institutions in the state</strong>. This rigorous environment focused on a 
+      <strong>high volume of clinical cases</strong>, ensuring a <strong>strong grasp of general medicine</strong>.
+    </p>
+
+    <h3><strong>Clinical Expertise & Specializations</strong></h3>
+
+    <ul>
+      <li><strong>Mood & Anxiety Disorders:</strong> Depression, Panic Attacks, Generalized Anxiety Disorder (GAD)</li>
+      <li><strong>Chronic Neuropsychiatric Conditions:</strong> Schizophrenia and Bipolar Disorder</li>
+      <li><strong>Sexual Medicine (Sexology):</strong> Erectile Dysfunction, Premature Ejaculation, Dhat Syndrome</li>
+      <li><strong>De-addiction Services:</strong> Alcohol, Tobacco, and behavioral addictions</li>
+      <li><strong>Neuro-Psychiatry & Geriatrics:</strong> Dementia, memory loss, migraines</li>
+      <li><strong>Child & Adolescent Psychiatry:</strong> ADHD, Autism, behavioral challenges</li>
+    </ul>
+
+    <h3><strong>Patient-Centric Philosophy</strong></h3>
+
+    <ul>
+      <li><strong>Empathetic Listening:</strong> Calm and patient approach</li>
+      <li><strong>Minimalist Medication:</strong> Focus on only relevant medications</li>
+      <li><strong>Confidentiality & Inclusivity:</strong> Safe, non-judgmental, LGBTQ+ friendly environment</li>
+    </ul>
+
+  </div>
+</div>
     <!-- CTA -->
     <div class="about-cta">
       <a href="#contact" class="btn-primary">Book Appointment</a>
