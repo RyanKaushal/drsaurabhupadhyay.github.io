@@ -1,33 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-    /* ===============================
+
+  /* ===============================
      About Modal (Read More)
   =============================== */
-function openModal() {
-  const modal = document.getElementById("aboutModal");
-  modal.classList.add("show"); // ✅
-  document.body.style.overflow = "hidden";
-}
+  function openModal() {
+    const modal = document.getElementById("aboutModal");
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
 
-function closeModal() {
-  const modal = document.getElementById("aboutModal");
-  modal.classList.remove("show"); // ✅
-  document.body.style.overflow = "auto";
-}
-  // Make functions global (for onclick in HTML)
+  function closeModal() {
+    const modal = document.getElementById("aboutModal");
+    modal.classList.remove("show");
+    document.body.style.overflow = "auto";
+  }
+
+  // Make functions global (for onclick)
   window.openModal = openModal;
   window.closeModal = closeModal;
 
-  window.onclick = function(event) {
+  // Close on ESC
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      closeModal();
+
+      // also close service modal if open
+      document.querySelectorAll(".modal.show").forEach(m => m.remove());
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  // Close on outside click
+  window.addEventListener("click", function(event) {
     const modal = document.getElementById("aboutModal");
     if (event.target === modal) {
       closeModal();
     }
-  };
-
+  });
 
   /* ===============================
      Appointment Form Validation
-     =============================== */
+  =============================== */
   const appointmentForm = document.getElementById("appointmentForm");
 
   if (appointmentForm) {
@@ -58,21 +71,18 @@ function closeModal() {
   }
 
   /* ===============================
-     Mobile Navbar Toggle (FIXED)
-     =============================== */
+     Mobile Navbar Toggle
+  =============================== */
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
   if (menuToggle && navLinks) {
-
-    // 🔑 FORCE MENU CLOSED ON LOAD
     navLinks.classList.remove("active");
 
     menuToggle.addEventListener("click", function () {
       navLinks.classList.toggle("active");
     });
 
-    // Optional: close menu when link is clicked (recommended)
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
@@ -81,90 +91,72 @@ function closeModal() {
   }
 
   /* ===============================
- Services → Open Article in Modal Iframe
-============================== */
-document.querySelectorAll(".service-item").forEach(item => {
-  item.addEventListener("click", (e) => {
-    e.preventDefault();
+     Services → Modal Article
+  =============================== */
+  document.querySelectorAll(".service-item").forEach(item => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
 
-    // Get the article content from the hidden div
-    const articleDiv = item.querySelector(".service-article");
-    if (!articleDiv) return; // No article, skip
+      const articleDiv = item.querySelector(".service-article");
+      if (!articleDiv) return;
 
-    let articleHTML = articleDiv.innerHTML; // Get the article's HTML
+      let articleHTML = articleDiv.innerHTML;
 
-    // Remove the last <p> (WhatsApp link) from the article
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = articleHTML;
-    const paragraphs = tempDiv.querySelectorAll("p");
-    if (paragraphs.length > 0) {
-      paragraphs[paragraphs.length - 1].remove(); // Remove the last paragraph (WhatsApp link)
-    }
-    articleHTML = tempDiv.innerHTML; // Updated HTML without the link
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = articleHTML;
 
-    // Create modal elements
-    const modal = document.createElement("div");
-    modal.className = "modal active";
-
-    const modalContent = document.createElement("div");
-    modalContent.className = "modal-content";
-
-    const closeBtn = document.createElement("button");
-    closeBtn.className = "close-btn";
-    closeBtn.innerHTML = "&times;"; // X symbol
-    closeBtn.addEventListener("click", () => {
-      modal.remove(); // Close modal
-    });
-
-    const iframe = document.createElement("iframe");
-    iframe.className = "modal-iframe";
-    // Load article into iframe with a button at the bottom
-    iframe.srcdoc = `
-      <html>
-        <head>
-          <style>
-            body { font-family: Arial, sans-serif; padding: 1rem; line-height: 1.5; color: #333; }
-            a { color: #2c7be5; }
-            .btn { padding: 0.7rem 1.4rem; border-radius: 30px; text-decoration: none; font-size: 0.9rem; cursor: pointer; border: none; display: inline-block; }
-            .secondary { background: #2dbf6c; color: #fff; }
-            .modal-whatsapp-btn { margin-top: 1rem; display: block; width: 100%; text-align: center; }
-          </style>
-        </head>
-        <body>
-          ${articleHTML}
-          <div class="modal-whatsapp-btn">
-            <button class="btn secondary" onclick="window.open('https://wa.me/917017784451?text=Hello%20Doctor%2C%20I%20would%20like%20to%20consult%20regarding%20${item.getAttribute('data-issue')}.%20Please%20let%20me%20know%20the%20available%20appointment%20timings.', '_blank'); window.parent.postMessage('closeModal', '*');">Contact on WhatsApp</button>
-          </div>
-        </body>
-      </html>
-    `;
-
-    // Assemble modal
-    modalContent.appendChild(closeBtn);
-    modalContent.appendChild(iframe);
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-
-    // Listen for message to close modal
-    const messageHandler = (event) => {
-      if (event.data === 'closeModal') {
-        modal.remove();
-        window.removeEventListener('message', messageHandler);
+      const paragraphs = tempDiv.querySelectorAll("p");
+      if (paragraphs.length > 0) {
+        paragraphs[paragraphs.length - 1].remove();
       }
-    };
-    window.addEventListener('message', messageHandler);
 
-    // Close modal on background click
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
+      articleHTML = tempDiv.innerHTML;
+
+      const modal = document.createElement("div");
+      modal.className = "modal show"; // ✅ FIXED
+
+      const modalContent = document.createElement("div");
+      modalContent.className = "modal-content";
+
+      const closeBtn = document.createElement("button");
+      closeBtn.className = "close-btn";
+      closeBtn.innerHTML = "&times;";
+      closeBtn.addEventListener("click", () => {
         modal.remove();
-        window.removeEventListener('message', messageHandler);
-      }
+        document.body.style.overflow = "auto"; // ✅ FIX
+      });
+
+      const iframe = document.createElement("iframe");
+      iframe.className = "modal-iframe";
+
+      iframe.srcdoc = `
+        <html>
+          <body style="font-family: Arial; padding: 1rem; line-height: 1.5;">
+            ${articleHTML}
+            <button onclick="window.open('https://wa.me/917017784451','_blank')" 
+              style="margin-top:1rem;padding:10px;background:#2dbf6c;color:#fff;border:none;border-radius:6px;">
+              Contact on WhatsApp
+            </button>
+          </body>
+        </html>
+      `;
+
+      modalContent.appendChild(closeBtn);
+      modalContent.appendChild(iframe);
+      modal.appendChild(modalContent);
+      document.body.appendChild(modal);
+
+      // Lock background scroll
+      document.body.style.overflow = "hidden";
+
+      // Close on outside click
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.remove();
+          document.body.style.overflow = "auto"; // ✅ FIX
+        }
+      });
     });
   });
+
 });
-});
-
-
-
-
