@@ -55,11 +55,7 @@
     <a href="#appointment" class="btn primary">Book Appointment</a>
     <a href="https://wa.me/+917017784451" target="_blank" class="btn secondary">Chat on WhatsApp</a>
   </div>
-</section>
-
-
-    <!-- Section 1 -->
-    <section id="about" class="about">
+<section id="about" class="about">
   <div class="container">
 
     <h2 class="section-title">About The Doctor</h2>
@@ -72,24 +68,15 @@
       <!-- Card 1 -->
       <div class="about-card">
         <h3>🎓 Education &amp; Credentials</h3>
-
         <p>
           <strong>Dr. Saurabh Upadhyay</strong> is a leading psychiatrist in Lucknow, trained at 
           <strong>two of India’s most esteemed medical institutions</strong>.
         </p>
-
         <p>
-          <strong>MD in Psychiatry (IMHH, Agra):</strong> He completed his specialization at the 
-          <strong>Institute of Mental Health and Hospital (IMHH), Agra</strong>. Established in 
-          <strong>1859</strong>, it is one of the <strong>oldest psychiatric facilities in South Asia</strong> and is recognized by the 
-          <strong>WHO as a Centre of Excellence for schizophrenia research</strong>.
+          <strong>MD in Psychiatry (IMHH, Agra):</strong> Institute of Mental Health and Hospital, Agra.
         </p>
-
         <p>
-          <strong>MBBS (LLRM Medical College, Meerut):</strong> He completed his MBBS from 
-          <strong>Lala Lajpat Rai Memorial (LLRM) Medical College</strong>, a 
-          <strong>premier government medical institution in Uttar Pradesh</strong>, known for 
-          <strong>high clinical exposure</strong>.
+          <strong>MBBS:</strong> LLRM Medical College, Meerut.
         </p>
       </div>
 
@@ -118,13 +105,31 @@
 
     </div>
 
+    <!-- Read More -->
+    <div class="about-readmore">
+      <button class="read-more-btn" onclick="openModal()">Read More</button>
+    </div>
+
     <!-- CTA -->
     <div class="about-cta">
       <a href="#contact" class="btn-primary">Book Appointment</a>
     </div>
 
   </div>
-</section>
+</section> <!-- ✅ IMPORTANT: Section closed here -->
+
+<!-- ✅ Modal MUST be outside section -->
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+    <h3>About Dr. Saurabh Upadhyay</h3>
+    <p>Full content goes here...</p>
+
+  </div>
+</div>
+
+  
 <section id="services" class="services">
   <h2>Services Offered</h2>
   <div class="service-grid">
