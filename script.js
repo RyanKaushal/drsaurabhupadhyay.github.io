@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
   =============================== */
 function openModal() {
   const modal = document.getElementById("aboutModal");
-  modal.style.display = "flex"; // IMPORTANT (not block)
+  modal.classList.add("show"); // ✅
   document.body.style.overflow = "hidden";
 }
 
 function closeModal() {
   const modal = document.getElementById("aboutModal");
-  modal.style.display = "none";
+  modal.classList.remove("show"); // ✅
   document.body.style.overflow = "auto";
 }
   // Make functions global (for onclick in HTML)
