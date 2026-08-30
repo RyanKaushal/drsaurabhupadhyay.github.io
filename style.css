@@ -84,12 +84,12 @@ body {
 }
 
 .navbar {
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  background-color:linear-gradient(135deg, #e6f2ff, #f4fff8);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background: linear-gradient(135deg, #e6f2ff, #f4fff8);
 }
 
 /* LOGO */
